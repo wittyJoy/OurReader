@@ -1,0 +1,102 @@
+{
+  "name": "our-reader",
+  "displayName": "OurReader",
+  "description": "阅读(VSCode端)",
+  "version": "0.0.1",
+  "keywords": [
+    "reader",
+    "阅读",
+    "小说",
+    "摸鱼"
+  ],
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "categories": [
+    "Other",
+    "Extension Packs"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "o_reader.sayHello",
+        "title": "Hello，小茗同学",
+        "category": "o_reader"
+      },
+      {
+        "command": "o_reader.command.getServerIP",
+        "title": "设置阅读のweb服务地址",
+        "category": "o_reader"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "o_reader.sayHello",
+          "group": "navigation@6"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "o_reader.command.getServerIP",
+          "when": "view == directory",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscodeRead",
+          "title": "阅读",
+          "icon": "images/read.svg"
+        }
+      ]
+    },
+    "views": {
+      "vscodeRead": [
+        {
+          "id": "directory",
+          "name": "目录"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.57.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "eslint": "^7.27.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2",
+    "@types/cheerio": "^0.22.13",
+    "@types/got": "^9.6.9",
+    "tslint": "^5.12.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.3",
+    "epub": "^1.2.0",
+    "got": "^9.6.0",
+    "iconv-lite": "^0.5.0",
+    "open": "^7.0.0"
+  }
+}

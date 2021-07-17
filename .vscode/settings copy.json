@@ -1,0 +1,21 @@
+/*
+ * @Title: 工作区单独设置
+ * @LastEditors: WangJiaYu
+ * @LastEditTime: 2021-06-23 18:12:26
+ */
+{
+  "editor.formatOnType": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  /* ~~>~~>~~>~~>~~>~~>~~>~~>~~>~~> */
+  // 使能每一种语言默认格式化规则
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  }
+}
