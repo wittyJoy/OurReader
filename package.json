@@ -10,7 +10,7 @@
     "小说",
     "摸鱼"
   ],
-  "icon": "/images/read.png",
+  "icon": "images/read.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/tiaopider/OurReader.git"
