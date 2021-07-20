@@ -8,7 +8,7 @@ import { showText } from "../text-view/showText";
 let bookChapter: any;
 /** @连接IP一获取书架 */
 const connectServerIP = async (serverIP: string) => {
-  serverIP = "192.168.3.72:1111";
+  // serverIP = "192.168.3.72:1111";
   const data = await readerDriver.getBookshelf(serverIP);
   treeDataProvider.fire();
   explorerNodeManager.treeNode = data;
