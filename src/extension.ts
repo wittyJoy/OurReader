@@ -14,7 +14,7 @@ export function activate(context: ExtensionContext) {
   context.subscriptions.push(
     treeDataProvider,
     commands.registerCommand(Commands.getServerIP, () => getServerIP()),
-    commands.registerCommand(Commands.openReaderWebView, (data) => openReaderWebView(data)),
+    commands.registerCommand(Commands.openReaderWebView, (data) => openReaderWebView(data, true)),
     // 注册 TreeView
     window.createTreeView(TREEVIEW_ID, {
       treeDataProvider: treeDataProvider,

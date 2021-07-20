@@ -2,7 +2,7 @@
 
 <!-- [![Version](https://vsmarketplacebadge.apphb.com/version-short/aooiu.z-reader.svg)](https://marketplace.visualstudio.com/items?itemName=aooiu.z-reader) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/aooiu.z-reader.svg)](https://marketplace.visualstudio.com/items?itemName=aooiu.z-reader) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/aooiu.z-reader.svg)](https://marketplace.visualstudio.com/items?itemName=aooiu.z-reader) ![stars](https://img.shields.io/github/stars/aooiuu/z-reader) ![forks](https://img.shields.io/github/forks/aooiuu/z-reader) ![release](https://img.shields.io/github/release/aooiuu/z-reader) ![issues](https://img.shields.io/github/issues/aooiuu/z-reader) -->
 
-> 用来摸鱼或学习的小说阅读插件,支持在线搜索和本地阅读,支持 txt 和 epub 格式
+> 本程序为「阅读 3.0」的配套 vscode 端，需要保证手机和电脑在同一局域网内，然后手机端打开 web 服务
 
 - 📕 仓库地址: [github.com](https://github.com/tiaopider/OurReader)
   <!-- - 📗 插件地址: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=aooiu.z-reader) -->
@@ -13,7 +13,7 @@
 
 ## 🎉 功能
 
-- [x] 本程序为「阅读 3.0」的配套 vscode 端，需要保证手机和电脑在同一局域网内，然后手机端打开 web 服务。
+- [x] 在 vscode 端的状态栏，隐秘的阅读
 
 <!-- ---
 

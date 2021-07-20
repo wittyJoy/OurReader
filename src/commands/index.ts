@@ -32,8 +32,10 @@ export const getServerIP = async () => {
 };
 
 /** @打开阅读窗口 */
-export const openReaderWebView = async (treeNode: TreeNode) => {
+export const openReaderWebView = async (treeNode: TreeNode, openBook?: boolean) => {
   if (!bookChapter) bookChapter = await readerDriver.getChapter(treeNode);
+  if (openBook) bookChapter = await readerDriver.getChapter(treeNode);
+
   readerDriver.getContent(treeNode).then((data: string) => {
     const vConfig = workspace.getConfiguration("o_reader");
     const read_window = vConfig.get("read_window");
