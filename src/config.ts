@@ -7,8 +7,15 @@ export enum Commands {
   editTemplateCss = "eo_reader.ditTemplateCss",
   goProgress = "o_reader.goProgress",
   progressUpdate = "o_reader.progress:update",
-  setOnlineSite = "o_reader.command.setOnlineSite",
-  setEncoding = "o_reader.command.setEncoding",
+
+  setWindow = "o_reader.command.setWindow",
+  bookName = "read_bar.name",
+  chapterTitle = "read_bar.title",
+  context = "read_bar.context",
+  prevRow = "read_bar.prevRow",
+  nextRow = "read_bar.nextRow",
+  prevChapter = "read_bar.prevChapter",
+  nextChapter = "read_bar.nextChapter",
 }
 
 export enum WebViewMessage {

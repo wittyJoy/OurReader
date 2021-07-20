@@ -4,18 +4,14 @@ export class Notification {
   private isStop = false;
   private options: ProgressOptions = {
     location: ProgressLocation.Notification,
-    title: "loding...",
+    title: "请求中...",
   };
 
-  constructor(title?: string) {
-    if (title) {
-      this.options.title = title;
-    }
-    this.start();
-  }
+  constructor() {}
 
-  async start() {
+  async start(title?: string) {
     this.isStop = false;
+    title ? (this.options.title = title) : "";
     window.withProgress(this.options, async () => {
       await new Promise((resolve) => {
         setInterval(() => {

@@ -3,12 +3,17 @@
   "displayName": "OurReader",
   "description": "阅读(VSCode端)",
   "version": "0.0.1",
+  "publisher": "witty·Joy",
   "keywords": [
     "reader",
     "阅读",
     "小说",
     "摸鱼"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiaopider/OurReader.git"
+  },
   "engines": {
     "vscode": "^1.57.0"
   },
@@ -31,6 +36,31 @@
         "command": "o_reader.command.getServerIP",
         "title": "设置阅读のweb服务地址",
         "category": "o_reader"
+      },
+      {
+        "command": "o_reader.command.setWindow",
+        "title": "设置阅读窗口",
+        "category": "o_reader"
+      },
+      {
+        "command": "read_bar.prevRow",
+        "title": "上一行",
+        "category": "o_reader"
+      },
+      {
+        "command": "read_bar.nextRow",
+        "title": "下一行",
+        "category": "o_reader"
+      },
+      {
+        "command": "read_bar.prevChapter",
+        "title": "上一章",
+        "category": "o_reader"
+      },
+      {
+        "command": "read_bar.nextChapter",
+        "title": "下一章",
+        "category": "o_reader"
       }
     ],
     "menus": {
@@ -46,6 +76,10 @@
           "command": "o_reader.command.getServerIP",
           "when": "view == directory",
           "group": "navigation"
+        },
+        {
+          "command": "o_reader.command.setWindow",
+          "when": "view == directory666"
         }
       ]
     },
@@ -65,7 +99,49 @@
           "name": "目录"
         }
       ]
-    }
+    },
+    "configuration": {
+      "type": "object",
+      "title": "o_reader",
+      "properties": {
+        "o_reader.read_window": {
+          "type": "string",
+          "default": "状态栏",
+          "enum": [
+            "状态栏",
+            "控制台",
+            "编辑器"
+          ],
+          "description": "小说阅读窗口"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "read_bar.prevRow",
+        "key": "left",
+        "mac": "left",
+        "when": "panelFocus"
+      },
+      {
+        "command": "read_bar.nextRow",
+        "key": "right",
+        "mac": "right",
+        "when": "panelFocus"
+      },
+      {
+        "command": "read_bar.prevChapter",
+        "key": "ctrl+left",
+        "mac": "cmd+left",
+        "when": "panelFocus"
+      },
+      {
+        "command": "read_bar.nextChapter",
+        "key": "ctrl+right",
+        "mac": "cmd+right",
+        "when": "panelFocus"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

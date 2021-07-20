@@ -32,7 +32,6 @@ interface IWebViewMessage {
 }
 
 interface ReaderDriver {
-  hasChapter: (path: string) => void;
   getChapter: (pathStr: string) => void;
   getContent: (path: string) => Promise<string>;
 }

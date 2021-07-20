@@ -26,30 +26,27 @@ class TreeDataProvider implements vscode.TreeDataProvider<TreeNode>, vscode.Disp
     this.onDidChangeTreeDataEvent.fire(undefined);
   }
 
-  /** 获取书籍(Ⅰ级节点) */
+  /** 获取节点 */
   public getTreeItem(element: TreeNode): vscode.TreeItem | Thenable<vscode.TreeItem> {
-    // 这里要返回最终显示的
-    let sss = {
+    console.log("这里要返回最终显示的");
+    return {
       label: element.name || element.title,
       tooltip: element.name
         ? `最近:${element.durChapterTitle}
 最新:${element.latestChapterTitle}`
         : "",
-      iconPath: "", // -----------------根节点--------------------------------------子节点------------
-      collapsibleState: element.name ? vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None,
+      iconPath: "../../images/read.svg", // -----------------根节点--------------------------------------子节点------------
+      collapsibleState: element.name ? vscode.TreeItemCollapsibleState.None : vscode.TreeItemCollapsibleState.Collapsed,
       command: {
         title: element.name || element.title,
         command: Commands.openReaderWebView,
         arguments: [element],
       },
-      // contextValue
     };
-    console.log("这里要返回最终显示的", sss);
-    return sss;
   }
 
   /** 获取目录(Ⅱ级节点) */
-  public async getChildren(element?: TreeNode | undefined): Promise<TreeNode[]> {
+  public async getChildren(element?: TreeNode | undefined) {
     console.log("目录(Ⅱ级节点)㈠", element);
     if (!element) {
       return explorerNodeManager.getChildren();
